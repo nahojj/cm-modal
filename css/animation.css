@@ -1,0 +1,55 @@
+/* Default Animation */
+
+.cm-modal-overlay.fade-and-drop {
+    display: block;
+    opacity: 0;
+}
+
+.cm-modal.fade-and-drop {
+    display: block;
+    top: -300%;
+    opacity: 1;
+}
+
+.cm-modal.fade-and-drop.cm-modal-open {
+    top: 50%;
+    -webkit-transition: 500ms top 500ms ease;
+    -moz-transition: 500ms top 500ms ease;
+    -ms-transition: 500ms top 500ms ease;
+    -o-transition: 500ms top 500ms ease;
+    transition: 500ms top 500ms ease;
+}
+
+.cm-modal.fade-and-drop.cm-modal-open.cm-modal-anchored {
+    -webkit-transition: 500ms top 500ms ease;
+    -moz-transition: 500ms top 500ms ease;
+    -ms-transition: 500ms top 500ms ease;
+    -o-transition: 500ms top 500ms ease;
+    transition: 500ms top 500ms ease;
+}
+
+.cm-modal-overlay.fade-and-drop.cm-modal-open {
+    top: 0;
+    opacity: 1;
+    -webkit-transition: 500ms opacity ease;
+    -moz-transition: 500ms opacity ease;
+    -ms-transition: 500ms opacity ease;
+    -o-transition: 500ms opacity ease;
+    transition: 500ms opacity ease;
+}
+
+.cm-modal.fade-and-drop {
+    -webkit-transition: 500ms top ease;
+    -moz-transition: 500ms top ease;
+    -ms-transition: 500ms top ease;
+    -o-transition: 500ms top ease;
+    transition: 500ms top ease;
+}
+
+.cm-modal-overlay.fade-and-drop {
+    -webkit-transition: 500ms opacity 500ms ease;
+    -moz-transition: 500ms opacity 500ms ease;
+    -ms-transition: 500ms opacity 500ms ease;
+    -o-transition: 500ms opacity 500ms ease;
+    transition: 500ms opacity 500ms ease;
+}
