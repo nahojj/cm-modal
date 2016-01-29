@@ -1,11 +1,16 @@
 (function() {
+    // This
     var self = this;
-        // Define our constructor
-        self.Modal = function() {
+
+    // Define our constructor
+    self.Modal = function() {
         // Create global element references
         self.closeButton = null;
         self.modal       = null;
         self.overlay     = null;
+
+        // Determine proper prefix
+        self.transitionEnd = transitionSelect();
 
         // Define option defaults
         var defaults = {
@@ -25,6 +30,24 @@
 
     // Public Methods
 
+    Modal.prototype.close = function() {
+        // Store value of this
+        var _ = this;
+
+        // Remove the open class
+        self.modal.className    = self.modal.className.replace('cm-modal-open', '');
+        self.overlay.className  = self.overlay.className.replace('cm-modal-open');
+
+        // Listen for CSS transitionend evt and then remove the nodes from the DOM
+        self.modal.addEventListener(self.transitionEnd, function() {
+            _.modal.parentNode.removeChild(_.modal);
+        });
+
+        self.overlay.addEventListener(self.transitionEnd, function() {
+            if(_.overlay.parentNode) _.overlay.parentNode.removeChild(_.overlay);
+        });
+    }
+
     Modal.prototype.open = function() {
         // Build out - Modal
         buildOut.call(this);
@@ -43,8 +66,7 @@
             (self.modal.offsetHeight > window.innerHeight ? 'cm-modal-open cm-modal-anchored') : 'cm-modal-open';
 
         self.overlay.className = self.overlay.className + 'cm-modal-open';
-     }
-
+    }
 
     // Private Methods
 
@@ -71,7 +93,7 @@
 
         // if closeButton option true, add close button
         if(self.options.closeButton === true) {
-            self.closeButton = document.createElement('button');
+            self.closeButton           = document.createElement('button');
             self.closeButton.className = 'cm-modal-close close-button';
             self.closeButton.innerHTML = 'X';
             this.modal.appendChild(self.closeButton);
@@ -79,15 +101,17 @@
 
         // if overlay is true, then we add it!
         if(self.options.overlay === true) {
-            self.overlay = document.createElement('div');
+            self.overlay           = document.createElement('div');
             self.overlay.className = 'cm-modal-overlay ' + self.options.classname;
+
             docFrag.appendChild(self.overlay);
         }
 
         // Create content area and append it to modal
-        contentHolder = document.createElement('div');
+        contentHolder           = document.createElement('div');
         contentHolder.className = 'cm-modal-content';
         contentHolder.innerHTML = content;
+
         self.modal.appendChild(contentHolder);
 
         // Append modal to docFrag
@@ -117,6 +141,13 @@
         if(self.overlay) {
             self.overlay.addEventListener('click', self.close.bind(this));
         }
+    }
+
+    function transitionSelect() {
+        var el = document.createElement("div");
+        if (el.style.WebkitTransition) return "webkitTransitionEnd";
+        if (el.style.OTransition) return "oTransitionEnd";
+        return 'transitionend';
     }
 
 
