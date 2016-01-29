@@ -23,6 +23,28 @@
         }
     }
 
+    // Public Methods
+
+    Modal.prototype.open = function() {
+        // Build out - Modal
+        buildOut.call(this);
+
+        // Init event
+        initEvents.casll(this);
+
+        // Then, we adding elements to the DOM. USe getComputedStyle
+        // force the broswer re recale and recognize the elements that we just added.
+        // Cause css animation has a start point.
+        window.getComputedStyle(self.modal).height;
+
+        // Add our open class and check if the modal is taller than the window
+        // If true, anchored class will be applied.
+        self.modal.className = self.modal.className +
+            (self.modal.offsetHeight > window.innerHeight ? 'cm-modal-open cm-modal-anchored') : 'cm-modal-open';
+
+        self.overlay.className = self.overlay.className + 'cm-modal-open';
+     }
+
 
     // Private Methods
 
@@ -75,7 +97,6 @@
         document.body.appendChild(docFrag);
     }
 
-
     // Utility method to extend defaults with user options
     function extendDefaults(source, props) {
         var prop;
@@ -86,6 +107,16 @@
             }
         }
         return source;
+    }
+
+    function initEvents() {
+        if(self.closeButton) {
+            self.closeButton.addEventListener('click', self.close.bind(this));
+        }
+
+        if(self.overlay) {
+            self.overlay.addEventListener('click', self.close.bind(this));
+        }
     }
 
 
