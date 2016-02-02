@@ -53,3 +53,123 @@
     -o-transition: 500ms opacity 500ms ease;
     transition: 500ms opacity 500ms ease;
 }
+
+/* ZOOM */
+
+
+.cm-modal.zoom {
+    display: block;
+    opacity: 1;
+    -webkit-transition: 500ms -webkit-transform ease;
+    -moz-transition: 500ms    -moz-transform ease;
+    -ms-transition: 500ms     -ms-transform ease;
+    -o-transition: 500ms      -o-transform ease;
+    transition: 500ms         transform ease;
+    -webkit-transform: translate(-50%, -50%) scale(0);
+    -moz-transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%) scale(0);
+    -o-transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.cm-modal.zoom.cm-modal-open {
+    -webkit-transition: 500ms -webkit-transform 500ms ease;
+    -moz-transition: 500ms    -moz-transform 500ms ease;
+    -ms-transition: 500ms     -ms-transform 500ms ease;
+    -o-transition: 500ms      -o-transform 500ms ease;
+    transition: 500ms         transform 500ms ease;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    -moz-transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%) scale(1);
+    -o-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cm-modal.zoom.cm-modal-open.cm-modal-anchored {
+    -webkit-transition: 500ms -webkit-transform 500ms ease;
+    -moz-transition: 500ms    -moz-transform 500ms ease;
+    -ms-transition: 500ms     -ms-transform 500ms ease;
+    -o-transition: 500ms      -o-transform 500ms ease;
+    transition: 500ms         transform 500ms ease;
+}
+
+.cm-modal-overlay.zoom.cm-modal-open {
+    top: 0;
+    opacity: 1;
+    -webkit-transition: 500ms opacity ease;
+    -moz-transition: 500ms opacity ease;
+    -ms-transition: 500ms opacity ease;
+    -o-transition: 500ms opacity ease;
+    transition: 500ms opacity ease;
+}
+
+.cm-modal-overlay.zoom {
+    -webkit-transition: 500ms opacity 500ms ease;
+    -moz-transition: 500ms opacity 500ms ease;
+    -ms-transition: 500ms opacity 500ms ease;
+    -o-transition: 500ms opacity 500ms ease;
+    transition: 500ms opacity 500ms ease;
+}
+
+/* Zoom and spin */
+
+.cm-modal-overlay.zoom-and-spin {
+    display: block;
+    height: 0px;
+    opacity: 0;
+}
+
+.cm-modal.zoom-and-spin {
+    opacity: 1;
+    display: block;
+    -webkit-transition: 500ms -webkit-transform ease;
+    -moz-transition: 500ms    -moz-transform ease;
+    -ms-transition: 500ms     -ms-transform ease;
+    -o-transition: 500ms      -o-transform ease;
+    transition: 500ms         transform ease;
+    -webkit-transform: translate(-50%, -50%) scale(0) rotateX(0deg);
+    -moz-transform: translate(-50%, -50%) scale(0) rotateX(0deg);
+    -ms-transform: translate(-50%, -50%) scale(0) rotateX(0deg);
+    -o-transform: translate(-50%, -50%) scale(0) rotateX(0deg);
+    transform: translate(-50%, -50%) scale(0) rotateX(0deg);
+}
+
+.cm-modal.zoom-and-spin.cm-modal-open {
+    -webkit-transition: 500ms -webkit-transform 500ms ease;
+    -moz-transition: 500ms    -moz-transform 500ms ease;
+    -ms-transition: 500ms     -ms-transform 500ms ease;
+    -o-transition: 500ms      -o-transform 500ms ease;
+    transition: 500ms         transform 500ms ease;
+    -webkit-transform: translate(-50%, -50%) scale(1) rotateX(360deg);
+    -moz-transform: translate(-50%, -50%) scale(1) rotateX(360deg);
+    -ms-transform: translate(-50%, -50%) scale(1) rotateX(360deg);
+    -o-transform: translate(-50%, -50%) scale(1) rotateX(360deg);
+    transform: translate(-50%, -50%) scale(1) rotateX(360deg);
+}
+
+.cm-modal.zoom-and-spin.cm-modal-open.cm-modal-anchored {
+    -webkit-transition: 500ms -webkit-transform 500ms ease;
+    -moz-transition: 500ms    -moz-transform 500ms ease;
+    -ms-transition: 500ms     -ms-transform 500ms ease;
+    -o-transition: 500ms      -o-transform 500ms ease;
+    transition: 500ms         transform 500ms ease;
+}
+
+.cm-modal-overlay.zoom-and-spin.cm-modal-open {
+    top: 0;
+    height: 100%;
+    -webkit-transition: 500ms all ease;
+    -moz-transition: 500ms all ease;
+    -ms-transition: 500ms all ease;
+    -o-transition: 500ms all ease;
+    transition: 500ms all ease;
+    opacity: 1;
+}
+
+.cm-modal-overlay.zoom-and-spin {
+    -webkit-transition: 500ms all 500ms ease;
+    -moz-transition: 500ms all 500ms ease;
+    -ms-transition: 500ms all 500ms ease;
+    -o-transition: 500ms all 500ms ease;
+    transition: 500ms all 500ms ease;
+}

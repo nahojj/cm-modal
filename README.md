@@ -16,6 +16,16 @@ var defaults = {
 
 ```
 
+##### Animation Options
+
+```
+
+className: 'fade-and-drop'
+className: 'zoom'
+className: 'zoom-and-spin'
+
+```
+
 ### Usage - Example:
 
 ###### Html
