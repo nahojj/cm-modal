@@ -1,3 +1,13 @@
+/*
+* CM-MODAL
+* ===============================================================
+* Description: A custom modal lightbox, built with tutorial.
+* Version: 1.0
+* Author: Johan <Nahoj>
+* License: MIT
+* ===============================================================
+*/
+
 (function() {
     // Define our constructor
     this.Modal = function() {
